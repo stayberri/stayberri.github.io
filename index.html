@@ -10,8 +10,18 @@
 <body>
     <h1>Ket's Passion Projects</h1>
     <p>This is a website that is meant to essentially just be a training tool for myself to learn web design. This website is not meant to help with programming knowledge.</p>
+    <script>
+        let quotes = [
+            "You have changed me!",
+            "Congratulations, you did it!",
+            "I'm so proud of you.",
+            "I saw that.",
+            "No no, don't touch me there, this is, my no no square."
+        ]
+        
+    </script>
     <button type="button"
-    onclick="document.getElementById('demo').innerHTML = 'You have changed me!'">
+    onclick="document.getElementById('demo').innerHTML = quotes[Math.floor(Math.random(5))]">
     It's me, I'm the button</button>
     <p id="demo">Press the button to change what I say!</p>
     
