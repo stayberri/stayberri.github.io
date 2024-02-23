@@ -26,16 +26,24 @@
             "Have sex. - Shinzo Abe"
         ]
 
-        function getQuote(number) {
-            if(number === undefined) { let number = Math.floor(Math.random() * quotes.length); }
-            return quotes[number]+ "<br><br>Press the button to change what I say again!<br><br>Quote Number: " + number
+        function getQuote(num) {
+            if(num===0) { 
+                console.log('no input');
+                var num = Math.floor(Math.random() * quotes.length);
+                console.log('should be outputting quote ' + num)
+            } 
+            else { 
+                console.log('input of ' + num)
+            }
+            return quotes[num] + "<br><br>Press the button to change what I say again!<br><br>Quote Number: " + num
         }
         
     </script>
-    <input type="number" id="quoteNumber"></input>
-    <button type="button" onclick="getQuote(document.getElementById('quoteNumber').value)">
+    <button type="button" onclick="document.getElementById('demo').innerHTML = getQuote(Number(document.getElementById('quoteNumber').value))">
     It's me, I'm the button</button>
     <p id="demo">Press the button to change what I say!</p>
+    <br><br>
+    <input type="number" id="quoteNumber"><br>Want a specific quote? Put in your quote number here!</input>
     
 </body>
 </html>
