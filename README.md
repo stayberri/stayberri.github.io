@@ -1,2 +1,2 @@
 # stayberri.github.io
-passion project website
+A GitHub Pages website created to learn the basics of web development

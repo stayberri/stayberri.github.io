@@ -41,7 +41,7 @@
             return quotes[num] + "<br><br>Press the button to change what I say again!<br><br>Quote Number: " + Number(num + 1);
         };
     </script>
-    <button type="button" onclick="document.getElementById('demo').innerHTML = getQuote(Number(document.getElementById('quoteNumber').value)-1);">
+    <button type="button" class="gen" onclick="document.getElementById('demo').innerHTML = getQuote(Number(document.getElementById('quoteNumber').value)-1);">
     It's me, I'm the button</button>
     <p id="demo">Press the button to change what I say!</p>
     <input type="number" min="1" max="1" id="quoteNumber"><br>Want a specific quote? Put in your quote number here! Or leave blank for a random quote!</input>
@@ -50,8 +50,8 @@
         document.getElementById("quoteNumber").setAttribute("max", String(quotes.length));
         document.getElementById("numberLimit").innerHTML = "Number has to be between 1 and " + quotes.length;
     </script>
-    <button type="button" onclick="location.href='./pages/about.html'" class="redirects">About Me</button>
-    <button type="button" onclick="location.href='./pages/fun.html'" class ="redirects">Fun & Games</button>
+    <button type="button" onclick="location.href='./pages/about.html'" class="gen">About Me</button>
+    <button type="button" onclick="location.href='./pages/fun.html'" class ="gen">Fun & Games</button>
     <!--
     <a href="./pages/about.html" class="button">Learn more about me here.</a>
     <br><br>
