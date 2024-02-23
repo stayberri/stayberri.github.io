@@ -25,10 +25,15 @@
             "Keep clicking, world-changer.",
             "Have sex. - Shinzo Abe"
         ]
+
+        function getQuote(number) {
+            if(number === undefined) { let number = Math.floor(Math.random() * quotes.length); }
+            return quotes[number]+ "<br><br>Press the button to change what I say again!<br><br>Quote Number: " + number
+        }
         
     </script>
-    <button type="button"
-    onclick="document.getElementById('demo').innerHTML = quotes[Math.floor(Math.random() * quotes.length)] + '<br><br>Press the button to change what I say again!'">
+    <input type="number" id="quoteNumber"></input>
+    <button type="button" onclick=getQuote(quoteNumber)>
     It's me, I'm the button</button>
     <p id="demo">Press the button to change what I say!</p>
     
