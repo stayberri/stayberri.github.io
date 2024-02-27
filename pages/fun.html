@@ -25,13 +25,57 @@
                     return "Correct! My number was " + myGuess + "! You're amazing!";
                 } else {
                     return "Incorrect! My number was " + myGuess + "! Try again by guessing another number!";
-                };
-            };
-        };
+                }
+            }
+        }
     </script>
     <input id="numberGuess" type="number" min="1" max="10"></input>
     <br>
-    <button type="button" class="gen" onclick="document.getElementById('answerField').innerHTML = numberGuesser(Number(document.getElementById('numberGuess').value));">Submit</button>
+    <button type="button" class="gen" onclick="
+        document.getElementById('answerField').innerHTML = numberGuesser(Number(document.getElementById('numberGuess').value)); 
+        document.getElementById('numberGuess').value = null;">Submit</button>
+    <br>
+    <h1>Rock, Paper, Scissors!</h1>
+    <p id="rpsAnswer">Let's play rock, paper, scissors. Put in your choice!</p>
+    <script>
+        function rps(input) {
+            let answers = ["rock", "paper", "scissors"]
+            if(!answers.includes(input.toLowerCase())) { 
+                return "That's not a valid choice! Choose rock, paper, or scissors!"; 
+            } else {
+                let myAnswer = answers[Math.floor(Math.random() * 3)]
+                if (myAnswer === input) { return `I choose ${myAnswer}. It's a tie!`; }
+                else if (input === 'rock') {
+                    if (myAnswer === 'paper') {
+                        return "I choose paper. You lose!";
+                    } else {
+                        return "I choose scissors. You win!";
+                    }
+                }
+                else if (input === 'scissors') {
+                    if (myAnswer === 'rock') {
+                        return "I choose rock. You lose!";
+                    } else {
+                        return "I choose paper. You win!";
+                    }
+                }
+                else if (input === 'paper') {
+                    if (myAnswer == 'scissors') {
+                        return "I choose scissors. You lose!";
+                    } else {
+                        return "I choose rock. You win!";
+                    }
+                }
+                // had way too much trouble with this, i'll leave this as a failsafe. should never be invoked.
+                else { return "An error occurred.<br>" + input + "<br>" + myAnswer}
+            }
+        }
+    </script>
+    <input id="rpsGuess" type="text"></input>
+    <br>
+    <button type="button" class="gen" onclick="
+        document.getElementById('rpsAnswer').innerHTML = rps(String(document.getElementById('rpsGuess').value)); 
+        document.getElementById('rpsGuess').value = null;">Submit</button>
     <br><br>
     <button type="button" onclick="location.href='../'" class ="gen">Go back to the homepage.</button>
     <!-- <a href="../" class="button">Go back to the homepage.</a> -->
