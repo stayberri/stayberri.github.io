@@ -13,6 +13,9 @@ button.gen {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+code {
+    background-color: lightgray;
+}
 /*
 a.button {
     padding: 1px 6px;

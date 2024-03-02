@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Only</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/web_pic.ico" />
+    <script src="config.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1>Developer Login</h1>
+    <input id="devPass"></input>
+    <p id="devMsg">Authorized users only.</p>
+    <script>
+        // will add developer options later, this took far too long to execute properly
+        function auth (password) {
+            if (password === config.devPassword) {
+                return "Access Granted"
+            } else {
+                return "Access Denied. Check your password against the <code>config.js</code> file."
+            }
+        }
+    </script>
+    <br>
+    <button type="button" class="gen" onclick="
+        document.getElementById('devMsg').innerHTML = auth(String(document.getElementById('devPass').value)) 
+        document.getElementById('devPass').value = null;">Submit</button>
+    <br><br>
+    <button type="button" onclick="location.href='../'" class ="gen">Go back to the homepage.</button>
+</body>
+</html>
